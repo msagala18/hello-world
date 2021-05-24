@@ -1,2 +1,3 @@
 # hello-world
-I am a Seneca student
+Michael Sagala
+OPS435NAA
