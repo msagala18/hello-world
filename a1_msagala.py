@@ -23,9 +23,10 @@ def leap_year(obj):
     Check if a given year is a leap year or not
     '''
     status = True
-    if (obj % 4) == 0:
-        if (obj % 100) == 0:
-            if (obj % 400) == 0:
+    num = int(obj)
+    if (num % 4) == 0:
+        if (num % 100) == 0:
+            if (num % 400) == 0:
                 status = True
             else:
                 status = False
@@ -37,10 +38,16 @@ def leap_year(obj):
 
 def sanitize(obj1,obj2):
     '''
-    put your function level docstring here ...
+    removes any characters in obj1 that is stated in obj2
     '''
-    ...
+    list1 = list(obj1)
+    list2 = list(obj2)
+    for x in list1:
+       for y in list2:#checks each 
+           if x == y:
+               list1.remove(y)
     
+    results = ''.join(list1)
     return results
 
 def size_check(obj, intobj):
@@ -53,9 +60,16 @@ def size_check(obj, intobj):
 
 def range_check(obj1, obj2):
     '''
-    put your function level docstring here ..
+    checks if number specified in obj1 is between numbers in obj2
     '''
-    ...
+    num = int(obj1)
+    low = obj2[0]
+    high = obj2[1]
+    
+    if (num >= low) and (num <= high):
+        status = True
+    else:
+        status = False
     
     return status
     
